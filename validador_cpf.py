@@ -18,3 +18,6 @@ for x in len(cpf_usuario):
     multiplicador -= 1
     soma_total = soma_total + resultado_multiplicacao
     total = soma_total % 11
+
+
+
