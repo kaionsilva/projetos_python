@@ -1,23 +1,23 @@
 #Coletar dados do usuário e transformar informação em INT e tirar erros de digitação
 cpf = input('Digite o seu CPF: ')
 cpf = cpf.replace("-", "").replace(".", "").replace(" ", "")
-cpf_usuario = list(cpf)
-cpf_usuario = [int(x) for x in cpf]
+cpf_user = list(cpf)
+cpf_user = [int(x) for x in cpf]
 
 #Pegando os dois últimos digitos do CPF para cálculo
-ultimos_digitos_cpf = cpf_usuario[-2], cpf_usuario[-1]
-ultimos_digitos_cpf = list(ultimos_digitos_cpf)
+last_digit_cpf = cpf_user[-2], cpf_user[-1]
+last_digit_cpf = list(last_digit_cpf)
 #Removendo 2 últimos digitos do CPF
 for i in range(1, 3):
-    cpf_usuario.pop()
+    cpf_user.pop()
 
 #Calculo multiplicação dos 9 primeiros digitos
-for x in len(cpf_usuario):
-    multiplicador = 10
-    resultado_multiplicacao = cpf_usuario[x] * multiplicador
-    multiplicador -= 1
-    soma_total = soma_total + resultado_multiplicacao
-    total = soma_total % 11
+for x in len(cpf_user):
+    multiplier = 10
+    result_multiplier = cpf_user[x] * multiplier
+    multiplier -= 1
+    sum_total = sum_total + result_multiplier
+    total = sum_total % 11
 
 
 

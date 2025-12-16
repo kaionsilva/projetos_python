@@ -35,11 +35,8 @@ while True:
             count_task += 1
             print(f'Tarefas concluídas: {count_task}')
             time.sleep(2)
-        except IndexError:
+        except (IndexError, ValueError):
             print('Desculpa, mas não existe essa tarefa na sua lista. ✘')
-            time.sleep(2)
-        except ValueError:
-            print('Desculpe, mas digite apenas os índices das tarefas. (Ex: 3)')
             time.sleep(2)
 
     #Bloco para remover uma tarefa
@@ -52,11 +49,8 @@ while True:
             remove_task = int(input('Digite a tarefa que deseja remover. (Ex: 3)'))
             task_user.pop(remove_task)
             print('Tarefa removida')
-        except IndexError:
+        except (IndexError, ValueError):
             print('Desculpe, mas não existe essa tarefa na sua lista. ✘')
-            time.sleep(2)
-        except ValueError:
-            print('Desculpe, mas digite apenas os índices das tarefas. (Ex: 3)')
             time.sleep(2)
 
 
