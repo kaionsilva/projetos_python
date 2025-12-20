@@ -1,0 +1,68 @@
+courtyard = [
+    {
+        'Car': ' Volkswagen Golf GT',
+        'Year': 2010,
+        'Engine': '2.0 Flex',
+        'Value': 45000,
+        'Discount for cash payment': 43500,
+        'Installment amount 20x': 48300,
+     },
+     {
+         'Car': 'Ford Ka',
+         'Year': 2007,
+         'Engine': '1.6 Flex',
+         'Value': 42300,
+         'Discount for cash payment': 40800,
+         'Installment amount 20x': 45600,
+     },
+     {
+         'Car': 'Fiat Toro',
+         'Year': 2025,
+         'Engine': '1.3 Flex',
+         'Value': 157500,
+         'Discount for cash payment': 156000,
+         'Installment amount 20x': 160800,
+     },
+     {
+         'Car': 'Toyota Hilux',
+         'Year': 2025,
+         'Engine': '2.8L Turbodiesel',
+         'Value': 225850,
+         'VDiscount for cash payment': 224350,
+         'Installment amount 20x': 229150,
+     },
+     {
+         'Car': 'RAM 1500',
+         'Year': 2025,
+         'Engine': '3.0L Hurricane 6 Biturbo',
+         'Value': 600000,
+         'Discount for cash payment': 598500,
+         'Installment amount 20x': 603000,
+     },
+     {
+         'Car': 'Toyota Corolla',
+         'Year': 2024,
+         'Engine': '2.0L Dynamic Force',
+         'Value': 200000,
+         'Discount for cash payment': 198500,
+         'Installment amount 20x': 203000,
+     },
+     {
+         'Car': 'Volkswagen Gol',
+         'Year': 2023,
+         'Engine': '2.0 Flex',
+         'Value': 60000,
+         'Discount for cash payment': 59500,
+         'Installment amount': 603300,
+     },
+     {
+         'Car': 'Toyota SW4 SUV',
+         'Year': 2025,
+         'Engine': 'Motor 2.8 Turbodiesel',
+         'Value': 476000,
+         'Discount for cash payment': 474500,
+         'Installment amount': 479300,
+     }
+]
+
+print(courtyard)
