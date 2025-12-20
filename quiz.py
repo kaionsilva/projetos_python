@@ -48,6 +48,3 @@ for question_for_user in questions:
         time.sleep(2)
 
 print(f'Parabéns, seu resultado: 3/{question_right}')
-    
-
-    
