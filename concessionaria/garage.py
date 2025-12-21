@@ -1,6 +1,6 @@
 courtyard = [
     {
-        'Car': ' Volkswagen Golf GT',
+        'Car': 'Volkswagen Golf GT',
         'Year': 2010,
         'Engine': '2.0 Flex',
         'Value': 45000,
@@ -64,5 +64,3 @@ courtyard = [
          'Installment amount': 479300,
      }
 ]
-
-print(courtyard)
