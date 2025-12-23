@@ -3,22 +3,22 @@ employees = [
         'Nome': 'Lucas Filandes',
         'Posição': 'Vendedor',
         'Vendas Realizadas': 0,
-        'Total de Vendas': 0,
         'Carros Vendidos': [],
+        'Comissão': 0
     },
     {
         'Nome': 'José Cavalcante',
         'Posição': 'Vendedor',
         'Vendas Realizadas': 0,
-        'Total de Vendas': 0,
         'Carros Vendidos': [],
+        'Comissão': 0
     },
     {
         'Nome': 'Ricardo Alves',
         'Posição': 'Vendedor',
         'Vendas Realizadas': 0,
-        'Total de Vendas': 0,
         'Carros Vendidos': [],
+        'Comissão': 0
     },
 ]
 

@@ -1,4 +1,5 @@
 #Pegar variaveis de outros arquivos
+import time
 from garage import courtyard
 from employees import employees
 #---------
@@ -11,7 +12,7 @@ while True:
     choose_login = input("""
     Bem-vindo ao sistema concessionária em python!
     (C) - Clientes
-    (F) - Funcionários
+    (F) - Funcionário
     (A) - Administrador
 """).upper()
     
@@ -39,14 +40,42 @@ while True:
         (Y) - Comprar Veículo
         (E) - Sair do painel de cliente
                             """).upper()
-        #Bloco de decisão de compra do cliente
+        
+        #Bloco para verificar de saldo do cliente é compativel com o valor do carro.
+        if balance_client < courtyard[option_car]['Valor']:
+            print('Não há saldo suficiente para realizar a compra.')
+            print('Saindo do painel do cliente...')
+            time.sleep(3)
+            continue
+        #Bloco de decisão se cliente quer comprar veículo
         if option_exit_or_buy == 'Y':
             print('Selecione o vendedor com o seu índice que realizou essa venda: ')
             print()
-            #Bloco de decisão de qual vendedor realizou a venda
+
+            #Bloco para mostrar nome e índice dos vendedores
             for x, employees_info in enumerate(employees):
                 print(f'{x} - {employees_info['Nome']}')
+            
+            #Bloco para seleção de funcionário na qual vai receber comissão, vendas realizadas e o nome do veículo que vendeu
+            try:
                 choose_seller = int(input('Digite o vendedor que realizou esta venda: '))
+                vendor = employees[choose_seller]
+                vendor['Vendas Realizadas'] += 1
+                vendor['Carros Vendidos'].append(courtyard[option_car]['Carro'])
+                vendor['Comissão'] += courtyard[option_car]['Valor'] * 0.10
+                print('Venda confirmada!')
+                print()
+                for info_seller in employees[choose_seller]:
+                    print(f'{info_seller}: {employees[choose_seller][info_seller]}')
+
+
+            except ValueError, IndexError:
+                print('Por favor, escolha o índice do vendedor que realizou a venda.')
+                print('Voltando para o menu principal... COMPRA CANCELADA')
+                time.sleep(3)
+
+        #Bloco de saída para retornar ao LOOP principal
         elif option_exit_or_buy == 'E':
             print('Saindo do painel do cliente...')
+            time.sleep(3)
             continue
