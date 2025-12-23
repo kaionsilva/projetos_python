@@ -5,18 +5,17 @@ from employees import employees
 #Variaveis
 
 #---------
-#Escolha do usuário para o que vai acessar
-choose_login = input("""
+#Bloco de acesso do usuário de acordo com sua escolha
+while True:
+    #Escolha do usuário para o que vai acessar
+    choose_login = input("""
     Bem-vindo ao sistema concessionária em python!
     (C) - Clientes
     (F) - Funcionários
     (A) - Administrador
 """).upper()
-
-
-
-#Bloco de acesso do usuário de acordo com sua escolha
-while True:
+    
+    #Bloco de decisão para qual ferramenta o usuário escolheu
     if choose_login == 'C':
         name_client = input('Bem vindo, digite o seu nome para continuarmos: ')
         balance_client = float(input('Digite o seu saldo: '))
@@ -40,11 +39,14 @@ while True:
         (Y) - Comprar Veículo
         (E) - Sair do painel de cliente
                             """).upper()
-        
         #Bloco de decisão de compra do cliente
         if option_exit_or_buy == 'Y':
             print('Selecione o vendedor com o seu índice que realizou essa venda: ')
             print()
+            #Bloco de decisão de qual vendedor realizou a venda
             for x, employees_info in enumerate(employees):
                 print(f'{x} - {employees_info['Nome']}')
-                break
+                choose_seller = int(input('Digite o vendedor que realizou esta venda: '))
+        elif option_exit_or_buy == 'E':
+            print('Saindo do painel do cliente...')
+            continue
