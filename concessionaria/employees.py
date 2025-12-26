@@ -4,21 +4,24 @@ employees = [
         'Posição': 'Vendedor',
         'Vendas Realizadas': 0,
         'Carros Vendidos': [],
-        'Comissão': 0
+        'Comissão': 0,
+        'Senha': 1234,
     },
     {
         'Nome': 'José Cavalcante',
         'Posição': 'Vendedor',
         'Vendas Realizadas': 0,
         'Carros Vendidos': [],
-        'Comissão': 0
+        'Comissão': 0,
+        'Senha': 1010,
     },
     {
         'Nome': 'Ricardo Alves',
         'Posição': 'Vendedor',
         'Vendas Realizadas': 0,
         'Carros Vendidos': [],
-        'Comissão': 0
+        'Comissão': 0,
+        'Senha': 2525,
     },
 ]
 
