@@ -50,7 +50,7 @@ while True:
             print('Saindo do painel do cliente...')
             time.sleep(3)
             continue
-        
+
         #Bloco de decisão se cliente quer comprar veículo
         if option_exit_or_buy == 'Y':
             print('Selecione o vendedor com o seu índice que realizou essa venda: ')
@@ -93,7 +93,34 @@ while True:
         for x, employees_info in enumerate(employees):
                 print(f'{x} - {employees_info['Nome']}')
 
-        #Bloco de decisão para qual vai acessar o sistema
+        #Bloco de decisão para qual funcionário vai acessar o sistema
         choose_employees = int(input('Digite qual login deseja acessar: '))
-        if choose_employees == 0:
-            print('Oi')
+        try:
+            if choose_employees == 0:
+            
+                #Bloco de validação de senha do funcionário
+                verification_password = int(input('Digite sua senha: '))
+                if verification_password == employees[0]['Senha']:
+                    print('Login realizado')
+                else: 
+                    print('Senha incorreta')
+            
+            elif choose_employees == 1:
+                verification_password = int(input('Digite sua senha: '))
+                if verification_password == employees[1]['Senha']:
+                    print('Login realizado')
+                else: 
+                    print('Senha incorreta')
+
+        except ValueError:
+            print('índice incorreto, voltando para o menu principal...')
+            time.sleep(3)
+            continue
+             
+
+        def verification_password_employees(login_employees):
+            verification_password = int(input('Digite sua senha: '))
+            if verification_password == employees[login_employees]['Senha']:
+                print('Login realizado')
+            else: 
+                print('Senha incorreta')
