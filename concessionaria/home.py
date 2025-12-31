@@ -1,10 +1,18 @@
 #Pegar variaveis de outros arquivos
 import time
+import os
 from garage import courtyard
 from employees import employees
 #---------
 #Variaveis
-
+def verification_password_employees(login_employees):
+            verification_password = int(input('Digite sua senha: '))
+            if verification_password == employees[login_employees]['Senha']:
+                print('Login realizado')
+                for info_seller in employees[choose_employees]:
+                    print(f'{info_seller}: {employees[login_employees][info_seller]}')
+            else: 
+                print('Senha incorreta')
 #---------
 #Bloco de acesso do usuário de acordo com sua escolha
 while True:
@@ -94,33 +102,21 @@ while True:
                 print(f'{x} - {employees_info['Nome']}')
 
         #Bloco de decisão para qual funcionário vai acessar o sistema
-        choose_employees = int(input('Digite qual login deseja acessar: '))
         try:
+            choose_employees = int(input('Digite qual login deseja acessar: '))
             if choose_employees == 0:
-            
-                #Bloco de validação de senha do funcionário
-                verification_password = int(input('Digite sua senha: '))
-                if verification_password == employees[0]['Senha']:
-                    print('Login realizado')
-                else: 
-                    print('Senha incorreta')
+                os.system('cls')
+                verification_password_employees(0)
             
             elif choose_employees == 1:
-                verification_password = int(input('Digite sua senha: '))
-                if verification_password == employees[1]['Senha']:
-                    print('Login realizado')
-                else: 
-                    print('Senha incorreta')
+                os.system('cls')
+                verification_password_employees(1)
+            
+            elif choose_employees == 2:
+                os.system('cls')
+                verification_password_employees(2)
 
         except ValueError:
             print('índice incorreto, voltando para o menu principal...')
             time.sleep(3)
             continue
-             
-
-        def verification_password_employees(login_employees):
-            verification_password = int(input('Digite sua senha: '))
-            if verification_password == employees[login_employees]['Senha']:
-                print('Login realizado')
-            else: 
-                print('Senha incorreta')
