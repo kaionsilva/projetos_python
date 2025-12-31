@@ -3,8 +3,9 @@ import time
 import os
 from garage import courtyard
 from employees import employees
+from employees import adm
 #---------
-#Variaveis
+#Funções / Variaveis
 def verification_password_employees(login_employees):
             verification_password = int(input('Digite sua senha: '))
             if verification_password == employees[login_employees]['Senha']:
@@ -17,15 +18,12 @@ def verification_password_employees(login_employees):
 #Bloco de acesso do usuário de acordo com sua escolha
 while True:
     #Escolha do usuário para o que vai acessar
-    try:
-        choose_login = input("""
+    choose_login = input("""
         Bem-vindo ao sistema concessionária em python!
         (C) - Clientes
         (F) - Funcionário
         (A) - Administrador
     """).upper()
-    except ValueError, IndexError:
-        print('Por favor, digite apenas as opções disponíveis.')
         
     #Bloco de decisão para qual ferramenta o usuário escolheu
     if choose_login == 'C':
@@ -120,3 +118,13 @@ while True:
             print('índice incorreto, voltando para o menu principal...')
             time.sleep(3)
             continue
+    
+    elif choose_login == 'A':
+        os.system('cls')
+        for indice, adminstrator in enumerate(adm):
+            print(f'{indice} - {adminstrator['Nome']}')
+
+        choose_administration = int(input('Escolha o seu login: '))
+        if choose_administration == 0:
+            password_verification = int(input(f'Bem vindo {adm[0]}, digite sua senha: '))
+            
